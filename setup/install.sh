@@ -18,6 +18,8 @@ add_marketplace() {
 install_plugin() {
   local out
   if out=$(claude plugin install "$1" --scope user 2>&1); then
+    # Already installed plugins stay on their old version unless updated.
+    claude plugin update "$1" --scope user >/dev/null 2>&1 || true
     echo "ok    $1"
   else
     echo "FAIL  $1: $(printf '%s' "$out" | tail -n 2 | tr '\n' ' ')" >&2
