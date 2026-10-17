@@ -2,6 +2,8 @@
 
 Julius's Claude Code plugin marketplace for UX/UI work: one master skill, **UX/UI Design**
 (`/ux-ui-design`), plus 60+ specialist design, animation, component and accessibility skills.
+Impeccable (https://github.com/pbakaus/impeccable) is the direction and quality layer inside the
+pipeline: PRODUCT.md, visual world, craft floor, detect, audit, critique and polish.
 
 ## Use it
 

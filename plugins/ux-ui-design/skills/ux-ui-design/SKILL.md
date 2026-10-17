@@ -1,6 +1,6 @@
 ---
 name: ux-ui-design
-description: "UX/UI Design: Julius's master design workflow for every new website, landing page, web app, dashboard or redesign. Run it at the start of any new project or when the user says 'UX/UI Design', 'design this', 'build a website', 'make it look premium' or 'redesign'. It runs the full pipeline: brief, inspiration research (Forever Components, Design Spells, Refero, Details), art direction, design system, shadcn/ui build, GSAP and Emil Kowalski motion, accessibility and QA, and ships to Vercel, calling the right specialist skill (taste-skill, frontend-design, ui-ux-pro-max, Emil Kowalski, GSAP, shadcn, Vercel, AccessLint, Bencium) at each step."
+description: "UX/UI Design: Julius's master design workflow for every new website, landing page, web app, dashboard or redesign. Run it at the start of any new project or when the user says 'UX/UI Design', 'design this', 'build a website', 'make it look premium' or 'redesign'. It runs the full pipeline: brief, inspiration research (Forever Components, Design Spells, Refero, Details), art direction, design system, shadcn/ui build, GSAP and Emil Kowalski motion, accessibility and QA, and ships to Vercel, calling the right specialist skill (Impeccable, taste-skill, frontend-design, ui-ux-pro-max, Emil Kowalski, GSAP, shadcn, Vercel, AccessLint, Bencium) at each step."
 ---
 
 # UX/UI Design
@@ -14,6 +14,16 @@ Specialist skills are namespaced by plugin in the skill list (for example
 Invoke them with the Skill tool when the phase calls for them. If one is not installed in the current
 environment, say so in one line and apply its principles from this file and `references/` instead.
 Never stop the pipeline because a helper is missing.
+
+**Impeccable is the design-direction and quality backbone of this pipeline.** Load `impeccable:impeccable`
+at the start of every project, run its `context` command once per session from the project root, and
+follow its directives: it owns PRODUCT.md (product truth), the visual-world decision and DESIGN.md, the
+craft floor read before every UI edit, and the finish checks (`detect`, `audit`, `critique`, `polish`).
+Where this file and Impeccable overlap, do both: Impeccable decides and verifies, the specialist skills
+below execute (taste-skill for direction research, shadcn for components, GSAP and Emil Kowalski for motion).
+Its commands: `/impeccable init | shape | document | extract | critique | audit | polish | bolder |
+quieter | distill | harden | animate | colorize | typeset | layout | delight | overdrive | clarify |
+adapt | optimize | live`.
 
 Full routing table: `references/skill-map.md`. Inspiration sources: `references/inspiration-sites.md`.
 Ship checklist: `references/quality-checklist.md`. Design system template: `references/design-md-template.md`.
@@ -33,6 +43,10 @@ so they can answer "defaults":
 Existing project? Read the codebase first and run `taste-skill:redesign-existing-projects` and
 `design-audit:design-audit` to find what to keep before proposing anything new.
 
+Then record the answers as product truth with Impeccable: no `PRODUCT.md` yet means `/impeccable init`
+(its interview asks at most three focused questions and writes PRODUCT.md). Never invent proof:
+testimonials, client logos, results and statistics must be real and sourced, or left out.
+
 ## Phase 1: Inspiration research
 
 Goal: 6 to 10 concrete references, each with a note on exactly what to borrow (layout, type pairing,
@@ -50,6 +64,9 @@ color, a specific interaction or animation). No vague "clean and modern".
 
 Write the references into the project's `DESIGN.md` moodboard section with links.
 
+5. Impeccable's new-work flow (`impeccable:impeccable`, reference `new-work.md`) turns the research into a
+   committed visual world: let it run its world and anti-reference steps on top of these references.
+
 ## Phase 2: Art direction
 
 1. Generate 2 or 3 genuinely different directions, not variations of one. Use
@@ -62,10 +79,15 @@ Write the references into the project's `DESIGN.md` moodboard section with links
    For Apple-like fluid, physical motion and polish: `emil-kowalski-skills:apple-design`.
 3. Present the directions in a short table (idea, type, palette, signature moment) and let the user pick.
    Default recommendation for Julius's brands: refined, understated, premium, credible. No hype.
+4. Lock the chosen direction with Impeccable: its direction contract (mode, world, signature moment,
+   bans) is what the build and the finish review are measured against. Use `/impeccable shape` when the
+   user wants a confirmed brief before any code.
 
 ## Phase 3: Design system
 
-Fill in `references/design-md-template.md` as `DESIGN.md` in the project root, then encode it:
+Fill in `references/design-md-template.md` as `DESIGN.md` in the project root (or let Impeccable write
+it: `/impeccable document` records an existing system, `/impeccable extract` pulls tokens and components
+out of finished code), then encode it:
 
 - Tokens as CSS variables (color, type scale, spacing, radius, shadow, motion durations and easings),
   wired into Tailwind and the shadcn theme. Use `ckm:design-system` for the token architecture.
@@ -74,6 +96,8 @@ Fill in `references/design-md-template.md` as `DESIGN.md` in the project root, t
 
 ## Phase 4: Build with shadcn/ui
 
+0. Read Impeccable's `reference/craft-floor.md` immediately before any UI edit. Its bans override
+   defaults from every other skill.
 1. Load the `shadcn:shadcn` skill. Use the shadcn MCP server (installed with the shadcn plugin) to
    search the registry, blocks and third-party registries before writing a component by hand.
 2. New project: `npx shadcn@latest init`, then `npx shadcn@latest add --all` so every component is
@@ -93,7 +117,8 @@ Fill in `references/design-md-template.md` as `DESIGN.md` in the project root, t
    Page transitions: `vercel-agent-skills:react-view-transitions`.
 4. Performance: `emil-kowalski-skills:animation-performance` and `gsap-skills:gsap-performance`.
    Animate transform and opacity only, honor `prefers-reduced-motion` everywhere.
-5. Review the result with `emil-kowalski-skills:review-animations`.
+5. Review the result with `emil-kowalski-skills:review-animations` and `/impeccable animate` for
+   purpose and restraint (motion that does not answer an action or tell the story goes).
 
 ## Phase 6: Quality gates (do not skip)
 
@@ -106,6 +131,10 @@ Run every item in `references/quality-checklist.md`. The core gates:
 - Visual QA: `example-skills:webapp-testing` to screenshot every page at 375, 768 and 1440 px, light
   and dark if supported. Look at the screenshots and fix what looks off. Repeat until clean.
 - Mobile feel: `emil-kowalski-skills:mobile-native`.
+- Impeccable gates: run `impeccable detect --json <changed files>` once the UI is finished and fix
+  every finding, then `/impeccable audit` (a11y, performance, responsive) and `/impeccable critique`
+  (heuristic scoring). Finish with `/impeccable polish`. For larger builds spawn the
+  `impeccable:impeccable-finish-reviewer` agent against the direction contract.
 - Final critique: `design-audit:design-audit` or `design:design-critique`.
 
 ## Phase 7: Ship
@@ -141,8 +170,10 @@ Run every item in `references/quality-checklist.md`. The core gates:
 
 ## Deliverables checklist
 
+- [ ] `PRODUCT.md` (Impeccable init) with confirmed product truth and no invented proof
 - [ ] `DESIGN.md` with moodboard, chosen direction, tokens, type, motion rules
 - [ ] Built pages using shadcn/ui restyled to the system
 - [ ] Motion pass with reduced-motion fallback
 - [ ] Accessibility scan clean, screenshots at 3 breakpoints reviewed
+- [ ] Impeccable `detect`, `audit` and `critique` clean, `polish` pass done
 - [ ] Deployed preview URL

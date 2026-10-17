@@ -6,6 +6,12 @@ current environment, apply its principle manually and say so in one line.
 | Need | Skill |
 |---|---|
 | Kickoff, whole workflow | `ux-ui-design` (this skill) |
+| Product truth (PRODUCT.md), visual world, direction contract | `impeccable:impeccable` (`init`, `shape`, new-work) |
+| Record or extract a design system (DESIGN.md) | `impeccable:impeccable` (`document`, `extract`) |
+| Anti-pattern detection on finished UI | `impeccable detect --json <files>` (Impeccable CLI) |
+| Quality passes: audit, critique, polish, harden, optimize | `impeccable:impeccable` (`audit`, `critique`, `polish`, `harden`, `optimize`) |
+| Targeted refinements | `impeccable:impeccable` (`bolder`, `quieter`, `distill`, `typeset`, `layout`, `colorize`, `delight`, `overdrive`, `clarify`, `adapt`, `animate`) |
+| Finish review against the direction contract | `impeccable:impeccable-finish-reviewer` agent |
 | Art direction, anti-slop, researched directions | `taste-skill:design-taste-frontend` |
 | Redesign an existing site | `taste-skill:redesign-existing-projects`, `design-audit:design-audit` |
 | Style variants | `taste-skill:minimalist-ui`, `taste-skill:high-end-visual-design`, `taste-skill:industrial-brutalist-ui` |

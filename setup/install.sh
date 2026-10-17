@@ -31,10 +31,12 @@ FAILED=0
 
 add_marketplace anthropics/skills
 add_marketplace JuliusCaesar-bit/design-kit
+add_marketplace pbakaus/impeccable
 
 # Pull the latest version of both marketplaces before installing.
 claude plugin marketplace update anthropic-agent-skills >/dev/null 2>&1 || true
 claude plugin marketplace update design-kit >/dev/null 2>&1 || true
+claude plugin marketplace update impeccable >/dev/null 2>&1 || true
 
 # Anthropic official skills
 for p in document-skills example-skills claude-api; do
@@ -47,6 +49,9 @@ for p in ux-ui-design taste-skill gsap-skills accesslint emil-kowalski-skills ve
          design-audit typography; do
   install_plugin "$p@design-kit"
 done
+
+# Impeccable by Paul Bakaus: design direction, craft floor, detect/audit/critique/polish
+install_plugin "impeccable@impeccable"
 
 # UI UX Pro Max is already synced from Julius's claude.ai account. On a machine without it, run:
 #   claude plugin install ui-ux-pro-max@design-kit --scope user

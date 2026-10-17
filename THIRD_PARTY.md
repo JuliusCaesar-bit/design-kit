@@ -13,5 +13,5 @@ Each keeps its original license file. Refresh them from upstream with `bash setu
 | plugins/design-audit | https://github.com/bencium/bencium-marketplace | MIT, see LICENSE in folder |
 | plugins/typography | https://github.com/bencium/bencium-marketplace | MIT, see LICENSE in folder |
 
-All other third-party plugins (taste-skill, gsap-skills, emil-kowalski-skills, vercel-agent-skills,
+All other third-party plugins (impeccable from its own marketplace pbakaus/impeccable, taste-skill, gsap-skills, emil-kowalski-skills, vercel-agent-skills,
 ui-ux-pro-max, Anthropic skills) are pulled straight from their own repositories at install time.
