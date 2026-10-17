@@ -112,7 +112,19 @@ Run every item in `references/quality-checklist.md`. The core gates:
 
 - SEO basics: metadata, Open Graph images, `sitemap.xml`, `robots.txt`, semantic headings, hreflang
   for EN and DE versions.
-- Deploy: `vercel-agent-skills:deploy-to-vercel`, then `vercel-agent-skills:vercel-optimize`.
+- Deploy to Julius's Vercel team **`juliuscaesar-bits-projects`** (https://vercel.com/juliuscaesar-bits-projects).
+  Always use this team; do not ask which team. Deploy previews by default, production only when asked.
+  1. Preferred: Vercel's GitHub integration. Commit and push to the project's GitHub repo. If the repo is not
+     on Vercel yet, ask Julius to import it once: https://vercel.com/new, pick the repo, keep the detected
+     framework, click Deploy. After that every pushed branch gets a preview URL and `main` deploys to production.
+     Give him the preview URL from the Vercel dashboard or the GitHub commit status.
+  2. Cloud sessions: the Vercel API is blocked by default. Only use the CLI if `VERCEL_TOKEN` is set and
+     `api.vercel.com` is reachable: `npx vercel deploy -y --scope juliuscaesar-bits-projects --token "$VERCEL_TOKEN"`.
+     Never ask for the token in chat; it belongs in the environment's secrets.
+  3. On Julius's Mac, if `vercel whoami` works, follow `vercel-agent-skills:deploy-to-vercel` with
+     `--scope juliuscaesar-bits-projects`.
+  4. Never use the no-login "claimable" deployment while his account is available.
+- After the first deploy: `vercel-agent-skills:vercel-optimize`.
 - Hand over: a short summary of what was built, the live URL, and what to do next.
 
 ## House rules (always)
