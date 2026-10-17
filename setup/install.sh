@@ -16,10 +16,11 @@ add_marketplace() {
 }
 
 install_plugin() {
-  if claude plugin install "$1" --scope user >/dev/null 2>&1; then
+  local out
+  if out=$(claude plugin install "$1" --scope user 2>&1); then
     echo "ok    $1"
   else
-    echo "FAIL  $1" >&2
+    echo "FAIL  $1: $(printf '%s' "$out" | tail -n 2 | tr '\n' ' ')" >&2
     FAILED=1
   fi
 }
@@ -28,6 +29,10 @@ FAILED=0
 
 add_marketplace anthropics/skills
 add_marketplace JuliusCaesar-bit/design-kit
+
+# Pull the latest version of both marketplaces before installing.
+claude plugin marketplace update anthropic-agent-skills >/dev/null 2>&1 || true
+claude plugin marketplace update design-kit >/dev/null 2>&1 || true
 
 # Anthropic official skills
 for p in document-skills example-skills claude-api; do
@@ -43,8 +48,6 @@ done
 
 # UI UX Pro Max is already synced from Julius's claude.ai account. On a machine without it, run:
 #   claude plugin install ui-ux-pro-max@design-kit --scope user
-
-claude plugin marketplace update >/dev/null 2>&1 || true
 
 if [ "$FAILED" -eq 0 ]; then
   echo "Done. Restart Claude Code (or open a new session), then type /ux-ui-design."

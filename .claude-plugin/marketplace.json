@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Julius's UX/UI design kit: the ux-ui-design master skill plus curated design, animation, component and accessibility skills.",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
@@ -16,22 +16,31 @@
     {
       "name": "taste-skill",
       "description": "tasteskill v2 by Leonxlnx: anti-slop art direction, researched design directions, redesign and style skills.",
-      "source": { "source": "github", "repo": "Leonxlnx/taste-skill" }
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill"
+      }
     },
     {
       "name": "gsap-skills",
       "description": "Official GSAP skills: core, timelines, ScrollTrigger, plugins, React, performance.",
-      "source": { "source": "github", "repo": "greensock/gsap-skills" }
+      "source": {
+        "source": "github",
+        "repo": "greensock/gsap-skills"
+      }
     },
     {
       "name": "accesslint",
       "description": "AccessLint accessibility skills and MCP: WCAG 2.2 audit, scan, fix, diff.",
-      "source": { "source": "git-subdir", "url": "AccessLint/skills", "path": "plugins/accesslint" }
+      "source": "./plugins/accesslint"
     },
     {
       "name": "emil-kowalski-skills",
       "description": "All of Emil Kowalski's design engineering skills: apple-design, animation, polish, UI review.",
-      "source": { "source": "github", "repo": "emilkowalski/skills" },
+      "source": {
+        "source": "github",
+        "repo": "emilkowalski/skills"
+      },
       "strict": false,
       "skills": [
         "./skills/animate",
@@ -54,7 +63,10 @@
     {
       "name": "vercel-agent-skills",
       "description": "Vercel Labs agent skills for the web: React best practices, web design guidelines, composition, view transitions, deploy and optimize.",
-      "source": { "source": "github", "repo": "vercel-labs/agent-skills" },
+      "source": {
+        "source": "github",
+        "repo": "vercel-labs/agent-skills"
+      },
       "strict": false,
       "skills": [
         "./skills/web-design-guidelines",
@@ -71,45 +83,40 @@
     {
       "name": "shadcn",
       "description": "Official shadcn/ui skill (components, registry, theming) plus the shadcn MCP server for live access to the full component registry.",
-      "source": { "source": "git-subdir", "url": "shadcn-ui/ui", "path": "skills" },
-      "strict": false,
-      "skills": ["./shadcn", "./migrate-radix-to-base"],
-      "mcpServers": {
-        "shadcn": {
-          "command": "npx",
-          "args": ["-y", "shadcn@latest", "mcp"]
-        }
-      }
+      "source": "./plugins/shadcn"
     },
     {
       "name": "bencium-controlled-ux-designer",
       "description": "Bencium: expert UI/UX guidance with an ask-first protocol for visual decisions.",
-      "source": { "source": "git-subdir", "url": "bencium/bencium-marketplace", "path": "bencium-controlled-ux-designer" }
+      "source": "./plugins/bencium-controlled-ux-designer"
     },
     {
       "name": "bencium-innovative-ux-designer",
       "description": "Bencium: develops an independent visual language through typography-led design directions.",
-      "source": { "source": "git-subdir", "url": "bencium/bencium-marketplace", "path": "bencium-innovative-ux-designer" }
+      "source": "./plugins/bencium-innovative-ux-designer"
     },
     {
       "name": "bencium-impact-designer",
       "description": "Bencium: production-grade frontends with bold creative commitment, no generic AI look.",
-      "source": { "source": "git-subdir", "url": "bencium/bencium-marketplace", "path": "bencium-impact-designer" }
+      "source": "./plugins/bencium-impact-designer"
     },
     {
       "name": "design-audit",
       "description": "Bencium: systematic visual UI/UX audits producing phased design plans.",
-      "source": { "source": "git-subdir", "url": "bencium/bencium-marketplace", "path": "design-audit" }
+      "source": "./plugins/design-audit"
     },
     {
       "name": "typography",
       "description": "Bencium: professional typography rules for UI code.",
-      "source": { "source": "git-subdir", "url": "bencium/bencium-marketplace", "path": "typography" }
+      "source": "./plugins/typography"
     },
     {
       "name": "ui-ux-pro-max",
       "description": "UI UX Pro Max: searchable database of styles, palettes, font pairings and stack guidelines. Already synced from claude.ai for Julius, install only on machines without it.",
-      "source": { "source": "github", "repo": "nextlevelbuilder/ui-ux-pro-max-skill" }
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      }
     }
   ]
 }

@@ -57,5 +57,5 @@ environment's Setup script. To let Claude browse the inspiration sites in the cl
 Inspiration sites used by the master skill: Forever Components, Design Spells, Refero (free tier only),
 Details. See `plugins/ux-ui-design/skills/ux-ui-design/references/inspiration-sites.md`.
 
-All third-party skills are pulled from their original repositories at install time, so they stay up to
-date and keep their own licenses.
+Most third-party skills are pulled from their original repositories at install time. shadcn, AccessLint and
+the Bencium plugins are vendored copies for reliable installs; see `THIRD_PARTY.md` for sources and licenses.
